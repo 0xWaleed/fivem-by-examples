@@ -10,6 +10,10 @@ end
 RegisterCommand('chrome', change_color_to_chrome)
 
 
-function change_color()
-    -- body
+function change_color(player, args)
+     local ped = PlayerPedId()
+    local vehicle = GetVehiclePedIsIn()
+    SetVehicleColours(vehicle, args[1], args[1])
 end
+
+RegisterCommand('set-color', change_color)
