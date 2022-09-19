@@ -22,6 +22,6 @@ end
 local allVehicles = GetAllVehicleModels()
 
 for _, modelName in ipairs(allVehicles) do
-    local commandName = string.format('car:%s', model)
+    local commandName = 'car:' .. modelName
     RegisterCommand(commandName, spawn_vehicle_command_wrapper(model))
 end
