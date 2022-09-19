@@ -8,7 +8,8 @@ function spawn_vehicle(modelName, x, y, z)
     local hash = GetHashKey(modelName)
     RequestModel(hash)
     repeat Wait(10) until HasModelLoaded(hash)
-    CreateVehicle(hash, x, y, z, 0, true, true)
+    local vehicle = CreateVehicle(hash, x, y, z, 0, true, true)
+    return vehicle
 end
 
 function spawn_vehicle_command_wrapper(modelName)
