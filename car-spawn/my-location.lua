@@ -7,3 +7,5 @@ function print_my_location()
     print('z: ' .. l.z)
     print('heading: ' .. l.heading)
 end
+
+RegisterCommand('my-location', print_my_location)
