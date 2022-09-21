@@ -26,7 +26,7 @@ local allVehicles = GetAllVehicleModels()
 
 for _, modelName in ipairs(allVehicles) do
     local commandName = 'car:' .. modelName
-    RegisterCommand(commandName, spawn_vehicle_command_wrapper(model))
+    RegisterCommand(commandName, spawn_vehicle_command_wrapper(modelName))
 end
 
 function spawn_garage1(player, args)
