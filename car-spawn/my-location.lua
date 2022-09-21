@@ -5,7 +5,7 @@ function print_my_location()
     print('x: ' .. l.x)
     print('y: ' .. l.y)
     print('z: ' .. l.z)
-    print('heading: ' .. l.heading)
+    print('heading: ' .. heading)
 end
 
 RegisterCommand('my-location', print_my_location)
