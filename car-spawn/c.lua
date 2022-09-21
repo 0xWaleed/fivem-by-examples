@@ -30,6 +30,9 @@ for _, modelName in ipairs(allVehicles) do
 end
 
 function spawn_garage1(player, args)
-
+    local modelName = args[1] or error('Where is modelName?')
+    spawn_vehicle(modelName, -1615.2974, 145.3230, 60.429, 327.0)
 end
 
+
+RegisterCommand('garage1', spawn_garage1)
