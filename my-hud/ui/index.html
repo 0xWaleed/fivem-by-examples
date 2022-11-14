@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUD</title>
+    <script src="nui://0xW/js/state.js" defer></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .health-armour-container {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .progress-bar {
+            width: 300px;
+            height: 20px;
+            background-color: #AEB1C2;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+             rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        }
+
+        .progress-text {
+            color: white;
+            position: absolute;
+            left: 2px;
+            z-index: 2;
+        }
+
+        .progress-value {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        .health-color {
+            background-color: #21D19F;
+        }
+
+        .armour-color {
+            background-color: #6DA6C5;
+        }
+
+        #userId {
+            font-size: 42px;
+            color: white;
+            position: absolute;
+            right: 10px;
+            top: 50px;
+        }
+
+        #logo {
+            position: absolute;
+            width: 96px;
+            height: 96px;
+            bottom: 10px;
+            right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="health-armour-container">
+        <div class="progress-bar" id="health">
+            <div class="progress-text"></div>
+            <div class="progress-value health-color"></div>
+        </div>
+
+        <div class="progress-bar" id="armour">
+            <div class="progress-text"></div>
+            <div class="progress-value armour-color"></div>
+        </div>
+    </div>
+
+    <div id="userId"></div>
+
+    <img id="logo" src="assets/0x-nbg.png" />
+    <script>
+        function healthHandler(value) {
+            const element = document.getElementById("health");
+            const progressText = element.querySelector(".progress-text");
+            const progressValue = element.querySelector(".progress-value");
+            progressText.innerText = value;
+            progressValue.style.width = value + "%";
+        }
+
+        function armourHandler(value) {
+            const element = document.getElementById("armour");
+            const progressText = element.querySelector(".progress-text");
+            const progressValue = element.querySelector(".progress-value");
+            progressText.innerText = value;
+            progressValue.style.width = value + "%";
+        }
+    </script>
+</body>
+</html>
